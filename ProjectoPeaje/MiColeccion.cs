@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -90,6 +91,72 @@ namespace ProjectoPeaje
 
             
         }
+
+        public string Modificar(int NumeroPlaca) { //WIP cambiar mensajes por algo coherente
+            int index = Buscar(NumeroPlaca);
+            int opcion = 0;
+            if (index > -1)
+            {
+                do
+                {
+                    Console.WriteLine("Seleccione el atributo a modificar: \n\n1. Numero de Factura\n2. Numero de Placa\n3. Fecha\n4. Hora\n5. Tipo de vehículo\n6. Monto pagado\n7. Pago con\n8. Vuelto\n9. Salir");
+                    opcion = int.Parse(Console.ReadLine());
+
+                    switch (opcion)
+                    {
+                        case 1:
+                            MiArray[index].NumeroFactura = int.Parse(Console.ReadLine());
+                            return $"El atributo Numero de Factura del vehiculo placa {NumeroPlaca} Fue actualizado.";
+                            break;
+                        case 2:
+                            MiArray[index].NumeroPlaca = int.Parse(Console.ReadLine());
+                            return $"El atributo Numero de Placa del vehiculo placa {NumeroPlaca} Fue actualizado.";
+                            break;
+                        case 3:
+                            MiArray[index].Fecha = Console.ReadLine();
+                            return $"El atributo Fecha del vehiculo placa {NumeroPlaca} Fue actualizado.";
+                            break;
+                        case 4:
+                            MiArray[index].Hora = Console.ReadLine();
+                            return $"El atributo Hora del vehiculo placa {NumeroPlaca} Fue actualizado.";
+                            break;
+                        case 5:
+                            MiArray[index].TipoDeVehículo = int.Parse(Console.ReadLine());
+                            return $"El atributo Tipo de vehículo del vehiculo placa {NumeroPlaca} Fue actualizado.";
+                            break;
+                        case 6:
+                            MiArray[index].MontoAPagar = float.Parse(Console.ReadLine());
+                            return $"El atributo Monto pagado del vehiculo placa {NumeroPlaca} Fue actualizado.";
+                            break;
+                        case 7:
+                            MiArray[index].PagaCon = float.Parse(Console.ReadLine());
+                            return $"El atributo Pago con del vehiculo placa {NumeroPlaca} Fue actualizado.";
+                            break;
+                        case 8:
+                            MiArray[index].Vuelto = float.Parse(Console.ReadLine());
+                            return $"El atributo Vuelto del vehiculo placa {NumeroPlaca} Fue actualizado.";
+                            break;
+
+                        default:
+                            opcion = 0;
+                            return $"Default";
+                            break;
+
+                    }
+
+                } while (opcion != 9);
+                
+            }
+
+            else
+            {
+                return $"El vehiculo placa {NumeroPlaca} no existe.";
+            }
+
+
+        }
+
+
 
         //-------------------
 

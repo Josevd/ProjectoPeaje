@@ -18,7 +18,11 @@ namespace ProjectoPeaje
             lista.Agregar(1, 123, "10-10-2020", "12:00", 1, 5000, 20000, 15000);
             Console.WriteLine(lista.RegresaUnVehiculo(123));
             Console.WriteLine(lista.Buscar(123));
+            lista.Modificar(123);
+            Console.WriteLine(lista.RegresaUnVehiculo(555));
             Console.ReadLine();
+
+            //para las pruebas cambiola placa de 123 a 555
 
         }
     }
