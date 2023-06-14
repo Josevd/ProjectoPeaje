@@ -20,7 +20,7 @@ namespace ProjectoPeaje
 
             for (int i = 0; i < MiArray.Length; i++) {
                 MiArray[i] = new RegistroVehicular();
-                //UltimoRegistro = 0;
+                UltimoRegistro = 0;
             }
         
         }
@@ -46,7 +46,11 @@ namespace ProjectoPeaje
         }
 
         //agrega un registro si no esta llena la coleccion
-        public string Agregar(int NumeroFactura, int NumeroPlaca, string Fecha, string Hora, int TipoDeVehículo, float MontoAPagar, float PagaCon, float Vuelto) {
+        public string Agregar(int NumeroFactura, int NumeroPlaca, int TipoDeVehículo, float MontoAPagar, float PagaCon, float Vuelto) //agrega un registro al array pero la fecha y hora son automaticos ya que al ser un registro no tiene sentidoq ue sea manual
+        {
+
+            string Fecha = DateTime.Now.ToString("dd-MM-yyyy");
+            string Hora = DateTime.Now.ToString("hh:mm tt");
 
             if (!lleno())
             {
@@ -151,6 +155,24 @@ namespace ProjectoPeaje
             else
             {
                 return $"El vehiculo placa {NumeroPlaca} no existe.";
+            }
+
+
+        }
+
+
+        public void ReporteGeneral()
+        {
+            if (UltimoRegistro > 0)
+            {
+                Console.WriteLine("\n\n\n\n");
+                Console.WriteLine("                                                 Título del Reporte");
+                Console.WriteLine("N factura    Placa           tipo de vehículo      monto Pagar   paga con     vuelto");
+                Console.WriteLine("==========================================================================================");
+                for (int i = 0; i<UltimoRegistro ;i++){
+                    Console.WriteLine(String.Format("{0,-13}{1,-25}{2,-15}{3,-12}{4,-15}{5,-10}", MiArray[i].NumeroFactura, MiArray[i].NumeroPlaca, MiArray[i].TipoDeVehículo, MiArray[i].MontoAPagar, MiArray[i].PagaCon, MiArray[i].Vuelto));
+                }
+
             }
 
 
