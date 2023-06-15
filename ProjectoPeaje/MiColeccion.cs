@@ -171,6 +171,7 @@ namespace ProjectoPeaje
                 Console.WriteLine("==========================================================================================");
                 for (int i = 0; i<UltimoRegistro ;i++){
                     Console.WriteLine(String.Format("{0,-13}{1,-25}{2,-15}{3,-12}{4,-15}{5,-10}", MiArray[i].NumeroFactura, MiArray[i].NumeroPlaca, MiArray[i].TipoDeVehículo, MiArray[i].MontoAPagar, MiArray[i].PagaCon, MiArray[i].Vuelto));
+                    Console.WriteLine("\n\n\n\n\n\n"); // solo para pruebas, remover esto
                 }
 
             }

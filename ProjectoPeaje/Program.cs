@@ -10,21 +10,28 @@ namespace ProjectoPeaje
     {
         static void Main(string[] args)
         {
-
+            ClsMenu.Menu();
             
+
+
+            /*
             MiColeccion lista = new MiColeccion();
             lista.Agregar(1, 123, 1, 15000, 240000, 15000);
             lista.Agregar(2, 123441, 1, 5000, 20000, 15000);
             lista.Agregar(3, 555, 1, 4000, 60000, 15000);
-            Console.WriteLine(lista.RegresaUnVehiculo(123));
+            Console.WriteLine(lista.RegresaUnVehiculo(123));*/
+
+
             //Console.WriteLine(lista.Buscar(123));
             //lista.Modificar(123);
             //Console.WriteLine(lista.RegresaUnVehiculo(555));
             //string fechaActual = DateTime.Now.ToString("dd-MM-yyyy");
             //Console.WriteLine(fechaActual);
+
+            /*
             Console.WriteLine("\n\n\n");
             lista.ReporteGeneral();
-            Console.ReadLine();
+            Console.ReadLine();*/
             
 
 
